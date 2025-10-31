@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Van Attendance Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🚐 Van Attendance</h2>
+
+    <form id="attendanceForm">
+      <input type="text" id="name" placeholder="Enter your name" required />
+      <button type="submit">Mark Attendance</button>
+    </form>
+
+    <div id="message"></div>
+
+    <h3>Today's Attendance</h3>
+    <ul id="todayList"></ul>
+
+    <h3>Total Payment Summary</h3>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Days</th><th>Amount (₹)</th></tr>
+      </thead>
+      <tbody id="summaryTable"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

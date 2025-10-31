@@ -1,0 +1,44 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f3f6fb;
+  color: #333;
+}
+.container {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+form {
+  display: flex;
+  gap: .5rem;
+}
+input {
+  flex: 1;
+  padding: .6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+button {
+  padding: .6rem 1rem;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#message {
+  margin-top: .8rem;
+  font-weight: 600;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid #ddd;
+  padding: .4rem;
+  text-align: left;
+}

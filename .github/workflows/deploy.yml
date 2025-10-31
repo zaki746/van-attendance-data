@@ -1,0 +1,32 @@
+name: Deploy Frontend
+
+on:
+  repository_dispatch:
+    types: [update_records]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout private data repo
+        uses: actions/checkout@v4
+
+      - name: Save updated records
+        run: |
+          echo '${{ toJson(github.event.client_payload) }}' > data/records.json
+
+      - name: Push data to public frontend repo
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          mkdir temp
+          cp -r build/* temp/
+          cp data/records.json temp/
+          cd temp
+          git init
+          git remote add origin https://x-access-token:${{ secrets.FRONTEND_PAT }}@github.com/<your-username>/van-attendance-frontend.git
+          git checkout -b main
+          git add .
+          git commit -m "Auto deploy from data repo"
+          git push -f origin main
